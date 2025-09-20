@@ -1,0 +1,211 @@
+﻿<!DOCTYPE html>
+<html lang="en" oncontextmenu="return false">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async="" src="../../gtag/js?id=G-FZMC02DVWM"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-FZMC02DVWM');
+    </script>
+    <title>Forex Risk Calculator :: FXC Tradepad :: ... forever stuck with profit</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script defer="" src="calc.js"></script>
+    <style>
+        /* Base styles */
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Main container */
+        .main-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Dark mode styles */
+        body.dark-mode {
+            background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+        }
+
+        body.dark-mode .main-container {
+            background: rgba(45, 55, 72, 0.95);
+            color: #e2e8f0;
+        }
+
+        /* Currency buttons */
+        .currency-button {
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .currency-button:hover {
+            background-color: #2563eb !important;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .currency-button.active {
+            background-color: #1d4ed8 !important;
+            border-color: #1e40af;
+        }
+
+        /* Form inputs */
+        input[type="number"] {
+            transition: all 0.3s ease;
+            border: 2px solid #e5e7eb;
+        }
+
+        input[type="number"]:focus {
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        /* Buttons */
+        button {
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Charts */
+        canvas {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .main-container {
+                margin: 1rem;
+                padding: 1rem;
+            }
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script defer="">
+        document.addEventListener('DOMContentLoaded', function() {
+            const darkModeToggle = document.createElement('button');
+            darkModeToggle.innerHTML = '<i class="fas fa-adjust"></i>';
+            darkModeToggle.classList.add('absolute', 'top-4', 'right-4', 'px-4', 'py-2', 'bg-gray-800', 'text-white', 'rounded', 'focus:outline-none');
+            darkModeToggle.addEventListener('click', () => {
+                const body = document.body;
+                body.classList.toggle('dark-mode');
+                const mode = body.classList.contains('dark-mode') ? 'enabled' : 'disabled';
+                localStorage.setItem('dark-mode', mode);
+            });
+            document.body.appendChild(darkModeToggle);
+
+            // Check dark mode preference from localStorage
+            const isDarkMode = localStorage.getItem('dark-mode') === 'enabled';
+            if (isDarkMode) {
+                document.body.classList.add('dark-mode');
+            }
+        });
+    </script>
+    <script defer="" src="scriptedlly.js"></script><script>
+    document.addEventListener('contextmenu', event => event.preventDefault());
+    document.addEventListener('selectstart', event => event.preventDefault());
+    </script>
+</head>
+<body class="sm:p-12 p-8 flex items-center justify-center min-h-screen">
+    <div class="relative main-container sm:p-12 p-8 max-w-7xl w-full flex flex-col md:flex-row">
+
+        <div class="absolute flex top-0 left-0 pt-0 pr-0 sm:m-5 m-3 ...">
+            <div class="bg-neutral-50/50 ...">
+            <a href="../index.htm"><i class="fas fa-arrow-circle-left fa-lg"></i></a>
+            </div>
+        </div>
+
+        <div class="absolute hidden sm:flex sm:top-0 right-0 pt-0 pr-0 ...">
+            <div class="bg-neutral-50/50 ...">
+                <a href="https://my.assexmarkets.com/auth/register?partner_code=6381684" target="_blank"><img class="object-cover rounded-bl-xl rounded-tr-lg h-[50px] w-auto ..." src="images/assex-logo.png" style="height: 75px;"></a>
+            </div>
+        </div>
+
+        <div class="absolute flex bottom-0 inset-x-0 sm:right-0 pb-2 pl-3 sm:pr-4 ...">
+            <div class="bg-neutral-50 ...">
+                <span style="font-size: 0.75rem;color: #959595;">&copy;<script>document.write(new Date().getFullYear());</script> <b>FXC Tradepad</b><a href="https://t.me/ekenmapeter target="_blank" style="font-size: 0.75rem;color: #959595;"> | Developer</a></span>
+            </div>
+        </div>
+
+
+        <div class="w-full md:w-2/6 md:pr-4">
+            <h1 class="sm:text-5xl text-2xl text-blue-500 font-bold sm:mt-6 mt-4 sm:mb-6 mb-4">Forex Risk Calculator</h1>
+            
+            <div class="mb-6">
+                <label class="block text-md font-medium text-gray-700">First: Select a Currency Pair</label>
+                <div class="flex space-x-2 sm:mt-2">
+                    <div class="grid grid-cols-4 text-sm lg:grid-cols-5 gap-2 mt-2">
+                        <button id="AUDUSD" onclick="setCurrency('AUDUSD')" class="currency-button px-1 py-1 p-1 bg-blue-500 text-white rounded">AUDUSD</button>
+                        <button id="EURUSD" onclick="setCurrency('EURUSD')" class="currency-button px-1 py-1 p-1 bg-blue-500 text-white rounded">EURUSD</button>
+                        <button id="GBPUSD" onclick="setCurrency('GBPUSD')" class="currency-button px-1 py-1 p-1 bg-blue-500 text-white rounded">GBPUSD</button>
+                        <button id="NZDUSD" onclick="setCurrency('NZDUSD')" class="currency-button px-1 py-1 p-1 bg-blue-500 text-white rounded">NZDUSD</button> 
+                        <button id="USDCAD" onclick="setCurrency('USDCAD')" class="currency-button px-1 py-1 p-1 bg-blue-500 text-white rounded">USDCAD</button>
+                        <button id="USDCHF" onclick="setCurrency('USDCHF')" class="currency-button px-1 py-1 p-1 bg-blue-500 text-white rounded">USDCHF</button>
+                        <button id="USDJPY" onclick="setCurrency('USDJPY')" class="currency-button px-1 py-1 p-1 bg-blue-500 text-white rounded">USDJPY</button>
+                        <button id="GBPJPY" onclick="setCurrency('GBPJPY')" class="currency-button px-1 py-1 p-1 bg-blue-500 text-white rounded">GBPJPY</button>
+                        <button id="GOLD" onclick="setCurrency('GOLD')" class="currency-button px-1 py-1 p-1 bg-yellow-500 text-white rounded">XAUUSD</button>
+                        <button id="BTC" onclick="setCurrency('BTC')" class="currency-button px-1 py-1 p-1 bg-blue-500 text-white rounded">BTC</button>
+                    </div>
+                </div>
+                <p id="selectedCurrency" class="mt-2 text-lg font-bold text-blue-500"></p>
+            </div>
+
+            <div class="mb-4">
+                <label for="entryPrice" class="block text-sm font-medium text-gray-700">Entry Price</label>
+                <input type="number" id="entryPrice" step="0.00001" class="mt-1 block w-full border p-2 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+            </div>
+            
+            <div class="mb-4">
+                <label for="exitPrice" class="block text-sm font-medium text-gray-700">Exit Price (SL)</label>
+                <input type="number" id="exitPrice" step="0.00001" class="mt-1 block w-full border p-2 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+            </div>
+            
+            <div class="mb-4">
+                <label for="targetPrice" class="block text-sm font-medium text-gray-700">Target Price (TP)</label>
+                <input type="number" id="targetPrice" step="0.00001" class="mt-1 block w-full border p-2 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+            </div>
+            
+            <div class="mb-4">
+                <label for="equityBalance" class="block text-sm font-medium text-gray-700">Equity Balance (USD)</label>
+                <input type="number" id="equityBalance" class="mt-1 block w-full border p-2 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+            </div>
+            
+            <div class="mb-4">
+                <label for="lots" class="block text-sm font-medium text-gray-700">Lots</label>
+                <input type="number" id="lots" step="0.01" class="mt-1 block w-full border p-2 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+            </div>
+            
+            <button onclick="calculateRisk()" class="px-4 py-2 bg-green-500 text-white rounded">Calculate</button>
+            <button onclick="clearForm()" class="ml-2 px-4 py-2 bg-red-500 text-white rounded">Clear</button>
+
+            <div class="mt-4">
+                <p id="riskOutput" class="text-lg font-semibold"></p>
+                <p id="rewardOutput" class="text-lg font-semibold"></p>
+                <p id="riskRewardOutput" class="text-lg font-semibold"></p>
+                <p id="lossOutput" class="text-lg font-semibold"></p>
+                <p id="profitOutput" class="text-lg font-semibold"></p>
+            </div>
+        </div>
+        <div class="w-full flex items-center justify-center md:w-2/6 md:pl-4 md:pr-4 mt-6 md:mt-0">
+            <canvas id="riskRewardChart"></canvas>
+        </div>
+        <div class="w-full flex items-center justify-center md:w-2/6 md:pl-4">
+            <canvas id="profitLossChart"></canvas>
+        </div>
+    </div>
+</body>
+</html>
